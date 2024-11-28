@@ -49,7 +49,9 @@
 
 
 	/* SIZES  */
+	--fluid-4-24: clamp(0.25rem, -0.1204rem + 1.8519vw, 1.5rem);
 	--fluid-6-12: clamp(0.375rem, -0.0776rem + 1.0345vw, 0.75rem);
+	--fluid-52-100: clamp(3.25rem, -0.3707rem + 8.2759vw, 6.7rem);
 
 }
 
@@ -192,21 +194,16 @@
 	bottom: 0;
 }
 
-.skills-tools__icon-container {
-	--fluid-52-100: clamp(3.25rem, -0.3707rem + 8.2759vw, 6.7rem);
-	
+.skills-tools__icon-container {	
 	margin-block: min(2.5rem, 3vh);
 	display: grid;
-	grid-template-columns: repeat(9, minmax(var(--fluid-52-100),1fr));
-	
-	gap: 0.2em;
-	/* margin-inline: auto; */
+	grid-template-columns: repeat(7, minmax(var(--fluid-52-100),1fr));
+	gap: var(--fluid-4-24);
+	margin-inline: var(--fluid-4-24);
 }
 
 
 .skills-tools__icon-container span {
-	
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
