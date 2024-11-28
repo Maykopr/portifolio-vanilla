@@ -1,0 +1,52 @@
+.ground {
+	background-color: red;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+}
+.background-main1 {
+	background-color: var(--light);
+	background-image: url("home1.png");
+	background-size: cover;
+	height: 80vh;
+}
+.background-main2 {
+	background-color: var(--color1);
+	clip-path: polygon(0 50%, 100% 0%, 100% 100%, 0% 100%);
+	height: 40vh;
+	position: relative;
+	top: -20vh;
+}
+.background-tools {
+	background-color: var(--color1);
+	height: 100vh;
+	position: relative;
+	top: -20vh;
+}
+.background-projects {
+	background-color: var(--color2);
+	height: 120vh;
+	position: relative;
+	clip-path: polygon(31% 11%, 100% 0, 100% 100%, 0 100%, 0 0);
+	top: -33vh;
+}
+.background-get-in-touch {
+	background-color: var(--light);
+	height: 130vh;
+	position: relative;
+	top: -80vh;
+	clip-path: polygon(0 0, 100% 29%, 100% 100%, 0% 100%);
+}
+.background-footer {
+	background-color: var(--light);
+	background-image: url("footer.jpg");
+	background-size: cover;
+	position: relative;
+	height: 30vh;
+	top: -100vh;
+	background-position: 0 -60vh;
+	clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
+}
