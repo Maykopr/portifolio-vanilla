@@ -4,15 +4,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/icons.css">
 	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Qwigley&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/e649d2e5e0.js" crossorigin="anonymous"></script>
-	<title>Novo Portifolio</title>
+	<script src="./js/script.js" defer></script>
+	<link rel="shortcut icon" href="./img/favicon2.ico" type="image/x-icon">
+	<title>Mayko Costa, Frontend Developer</title>
 </head>
 
 <body>
@@ -27,26 +24,10 @@
 		</nav>
 	</header>
 
-	<nav>
-		<ul class="side-navigation">
-			<li><a href="#main">
-					<i class="devicon-javascript-plain"></i></a></li>
-			<li><a href="#skills-tools">
-					<i class="devicon-javascript-plain"></i></a></li>
-			<li><a href="#projects">
-					<i class="devicon-javascript-plain"></i></a></li>
-			<li><a href="#get-in-touch">
-					<i class="devicon-javascript-plain"></i></a></li>
-		</ul>
-	</nav>
 
 	<main>
-
-
-
 		<section id="main" class="main scroll-stop">
 			<div class="wrapper">
-				
 				<div class="main__hero">
 					<h1>Frontend Developer.</h1>
 					<p>G'day, I'm Mayko! A developer with designer tendencies.</p>
@@ -100,43 +81,43 @@
 			<div class="wrapper">
 				<header class="title-container">
 					<h2 class="title-section">Projects</h2>
-					<p class="description-section">Some open source
+					<p class="description-section"><span>Some open source
 						projects, web apps
-						and experimentals.</p>
+						and experimentals.</span>
+						<a href="https://codepen.io/maykopr" target="_blank" class="show-all">Show all ></a>
+					</p>
 				</header>
 				<div class="projects-grid">
 					<div class="project__card">
-						<img src="./img/calculadora-react.jpg" alt="image of project 1">
-						<h3>Name of project 1</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita soluta, ullam id recusandae nesciunt illo?
+						<img src="./img/calc-react.jpg" alt="image of project one">
+						<h3>Calculator in React</h3>
+						<p>This is my first project built with React. Developing a calculator may seem simple, but 'edge cases' can lead to unexpected results that need to be carefully addressed.
 						</p>
 						<div class="btn-container">
-							<button>Visit</button>
-							<button>View Code</button>
+							<a href="https://codepen.io/maykopr/full/oNJjYJK" target="_blank">Visit</a>
+							<a href="https://github.com/Maykopr/calculadora-React" target="_blank">View Code</a>
 						</div>
 					</div>
 					<div class="project__card">
-						<img src="./img/site-viagem.jpg" alt="image of project 2">
-						<h3>Name of project 2</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita soluta, ullam id recusandae nesciunt illo?
-						</p>
+						<img src="./img/pomodoro.jpg" alt="image of project 2">
+						<h3>Pomodoro timer</h3>
+						<p>An app built with React for productivity, helping you alternate between focus and rest with customizable timers and a simple, intuitive design.</p>
 						<div class="btn-container">
-							<button>Visit</button>
-							<button>View Code</button>
+							<a href="https://codepen.io/maykopr/full/vYvOYBg" target="_blank">Visit</a>
+							<a href="https://codepen.io/maykopr/pen/vYvOYBg" target="_blank">View Code</a>
 						</div>
 					</div>
 					<div class="project__card">
-						<img src="./img/todo-list.jpg" alt="image of project 3">
-						<h3>Name of project 3</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita soluta, ullam id recusandae nesciunt illo?
-						</p>
+						<img src="./img/chartEUA.png" alt="image of project 3">
+						<h3>Interactive choropleth map of the EUA</h3>
+						<p>Built with D3.js, showcasing educational attainment data. Designed for clarity and ease of exploration, the map highlights regional educational trends across the country.</p>
 						<div class="btn-container">
-							<button>Visit</button>
-							<button>View Code</button>
+							<a href="https://codepen.io/maykopr/full/rNgOXYr" target="_blank">Visit</a>
+							<a href="https://codepen.io/maykopr/pen/rNgOXYr?editors=0111" target="_blank">View Code</a>
 						</div>
 					</div>
 				</div>
-				<div>
+				<div class="project__description">
 					<h2 class="title-section">Currently working on:</h2>
 					<p class="description-section">Improving my skills in, and understanding of vanilla JavaScript and
 						React. Also, having fun with
@@ -148,12 +129,9 @@
 			<div class="wrapper">
 				<header class="title-container">
 					<h2 class="title-section">Get in touch!</h2>
-					<p class="description-section">Got a question or proposal, or just want
-						to say hello? Go ahead.
-						Dropping a line to say g’day, ask for my resume or see if we can build something amazing
-						together?
-						I’d
-						love to hear from you!</p>
+					<p class="description-section">Got a question or proposal, or just want to say hello? Go ahead.
+						Say g'day, ask for my resume or see if we can build something amazing together.
+						I'd love to hear from you!</p>
 				</header>
 				<div class="card-contact">
 					<div class="card-contact__hero">
@@ -172,16 +150,24 @@
 						<p>maykopr@hotmail.com</p>
 						<p>Ipatinga-MG  Brasil</p>
 						<div class="card-contact__call-to-action">
-								<a href=""><i aria-labelledby="label" class="fa-brands fa-square-whatsapp"></i></a>
-								<a href=""><i class="fa-brands fa-whatsapp"></i></a>
-								<a href=""><i class="fa-brands fa-linkedin"></i></a>
-								<a href=""><i class="fa-brands fa-github"></i></a>
-								<a href=""><i class="fa-solid fa-envelope"></i></a>
+								<a href="https://api.whatsapp.com/send?phone=5531986037988&text=Ol%C3%A1!%20Quero%20conversar%20com%20voc%C3%AA%20sobre%20desenvolvimento%20web." target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
+								<a href="https://www.linkedin.com/in/mayko-costa/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+								<a href="https://github.com/Maykopr" target="_blank"><i class="fa-brands fa-github"></i></a>
+								<a href="mailto:maykopr@hotmail.com">
+									<i class="fa-solid fa-envelope"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+		<nav>
+			<ul class="side-navigation">
+				<li><a href="#main" data-section="main" class="active"></a></li>
+				<li><a href="#skills-tools" data-section="skills-tools"></a></li>
+				<li><a href="#projects" data-section="projects"></a></li>
+				<li><a href="#get-in-touch" data-section="get-in-touch"></a></li>
+			</ul>
+		</nav>
 	</main>
 
 	<footer id="footer">
