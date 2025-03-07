@@ -10,22 +10,25 @@
 :root {
 	scroll-snap-type: y mandatory;
 	scroll-behavior:smooth;
+
+	font-family: "Urbanist", sans-serif;
+
 	/* VARIABLES  */
 
 	--width: 70%;
 	--max-width: 1280px;
 
 	/* COLORS */
-	--light: #efecdb;
-	--dark: #221608;
-	--primary: #C99058;
-	--neutral: #c8c8c8;
-	--secondary: #ffe9d1;
-	--contrast: #649039;
+	--light: #FFF8E7;
+	--dark: #281B01;
+	--neutral: #E9ECEF;
+	--primary: #9cab6d;
+	--secondary: #DDA15E;
+	--contrast: #e79232;
 
 	--font-dark: var(--dark);
 	--font-light: var(--light);
-	--font-contrast: var(--contrast);
+	--font-contrast: var(--primary);
 
 	/* FONTS */
 	--fsize--2: clamp(0.382rem, 0.5761rem + -0.2099vw, 0.5276rem);
@@ -33,7 +36,7 @@
 	--fsize-0: clamp(0.9375rem, 0.9167rem + 0.0901vw, 1rem);
 	--fsize-1: clamp(1.2497rem, 1.1269rem + 0.5309vw, 1.618rem);
 	--fsize-2: clamp(1.6658rem, 1.3485rem + 1.3724vw, 2.6179rem);
-	--fsize-3: clamp(2.2206rem, 1.5488rem + 2.9049vw, 4.2358rem);
+	--fsize-3: clamp(2.7000rem, 1.5488rem + 2.9049vw, 4.2358rem);
 
 	--font-hero: 800 var(--fsize-3) "Urbanist", sans-serif;
 	--font-nav: 400 var(--fsize-1) "Urbanist", sans-serif;
@@ -59,7 +62,6 @@
 }
 
 .wrapper {
-	line-height: 1.4;
 	max-width: var(--max-width);
 	height: 80vh;
 	width: var(--width);
@@ -129,11 +131,11 @@
 	position: relative;
 }
 
-.main::before {
+.main::after {
 	height: 40%;
 	width: 100%;
 	clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
-	background-color: var(--secondary);
+	background-color: var(--light);
 	content: "";
 	position: absolute;
 	bottom: 0;
@@ -168,7 +170,7 @@
 
 .skills-tools {
 	scroll-margin-top: 1vh;
-	background-color: var(--secondary);
+	background-color: var(--light);
 	position: relative;
 	height: 100vh;
 	display: flex;
@@ -177,7 +179,7 @@
 .skills-tools::after {
 	clip-path: polygon(20% 60%, 100% 0, 100% 100%, 0 100%, 0 0);
 	content: "";
-	background-color: var(--neutral);
+	background-color: var(--primary);
 	width: 100%;
 	height: 10%;
 	position: absolute;
@@ -187,7 +189,7 @@
 .skills-tools__icon-container {	
 	padding: 1ch;
 	display: grid;
-	grid-template-columns: repeat(7, minmax(var(--fluid-52-100),1fr));
+	grid-template-columns: repeat(9, minmax(var(--fluid-52-100),1fr));
 	gap: var(--fluid-4-24);
 }
 
@@ -200,12 +202,12 @@
 	gap: 1ch;
 	font: var(--font-title2);
 	font-size:var(--fluid-6-12);
-	background-color: var(--contrast);
+	background-color: var(--secondary);
 	border-radius: 0.4em;
 	aspect-ratio: 1;
 	position: relative;
 	color: var(--light);
-	box-shadow: 3px 3px 5px var(--neutral);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .skills-tools__icon-container span:hover{
@@ -224,7 +226,7 @@
 
 .projects {
 	scroll-margin-top: 1vh;
-	background-color: var(--neutral);
+	background-color: var(--primary);
 	height: 100vh;
 	position: relative;
 	display: flex;
@@ -234,7 +236,7 @@
 .projects::after {
 	clip-path: polygon(0% 0%, 100% 40%, 100% 100%, 0% 100%);
 	content: "";
-	background-color: var(--primary);
+	background-color: var(--light);
 	width: 100%;
 	height: 40%;
 	position: absolute;
@@ -285,7 +287,7 @@
 }
 
 .project__card a{
-	background-color: var(--primary);
+	background-color: var(--contrast);
 	padding: 1ch;
 	border: none;
 	border-radius: 0.2em;
@@ -310,7 +312,6 @@
 	font: var(--font-title2);
 	color: var(--light);
 	text-decoration: none;
-	/* margin-right: 1rem; */
 }
 .show-all:hover{
 	cursor:pointer;
@@ -325,7 +326,7 @@
 	scroll-margin-top: 1vh;
 	height: 85vh;
 	display: flex;
-	background-color: var(--primary);
+	background-color: var(--light);
 	position: relative;
 }
 
@@ -346,10 +347,6 @@
 	aspect-ratio: 5/3;
 	margin: 1.5em auto;
 	display: flex;
-
-	@media screen and (max-width: 375px) {
-		flex-direction: column;
-	}
 }
 
 .card-contact__hero{
@@ -363,8 +360,6 @@
 	justify-content: center;
 	gap: 2rem;
 	overflow-x: hidden;
-	@media screen and (max-width: 375px){
-	}
 }
 
 .card-contact__hero h3{
@@ -424,13 +419,12 @@
 .card-contact__call-to-action {
 	display: flex;
 	gap: 0.3em;
-	color: var(--light);
+	font-size: var(--fsize-1);
 }
 
 .card-contact__call-to-action a {
-	font-size: 1rem;
+	color: var(--font-dark);
 	text-decoration: none;
-	color: var(--dark);
 }
 
 .card-contact__call-to-action a:hover{
@@ -467,7 +461,6 @@ footer {
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
     background-color: var(--primary);
-	/* filter: brightness(1.2); */
 	box-shadow: inset 0 -1px 2px 1px rgba(233, 233, 233, 0.502);
     border-radius: 10%; /* Quadrado inicial */
     transition: all 0.5s ease;
@@ -493,8 +486,8 @@ footer {
 /* smartphone */
 @media screen and (max-width: 420px){
 	:root{
-		scroll-snap-type:none;
-		scroll-behavior:smooth;
+		scroll-snap-type: none;
+		scroll-behavior: smooth;
 	}
 	.navbar{
 		display: none;
@@ -504,8 +497,11 @@ footer {
 		right: 0.8rem;
 		display:none;
 	} 
-	.wrapper{
+
+	.wrapper {
+		max-width: var(--max-width);
 		width: 85%;
+		margin: 8vh auto;
 	}
 
 	.wrapper, .skills-tools, .projects{
@@ -514,13 +510,17 @@ footer {
 
 	/* HOME  */
 
-	.main::before {
-		height: 50%;
+	.main::after {
+		height: 45%;
 		clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
 	}
 	.main__hero {
-		min-height: 50vh;
+		min-height: 55vh;
 		text-align: end;
+	}
+	.main__hero p {
+		margin-left: 20%; 
+		margin-top: 0.5em;
 	}
 
 	/* SKILLS  */
@@ -534,18 +534,10 @@ footer {
 		grid-template-columns: repeat(3,1fr);
 	}
 
-
-	.projects-grid{
-		grid-template-columns: 1fr;
+	.skills-tools__icon-container span {
+		font: var(--font-title2);
 	}
-
-	.card-contact__hero{
-		display: none;
-	}
-
-	.card-contact__info{
-		width: 100%;
-	}
+	
 
 	/* PROJECT  */
 
@@ -553,5 +545,61 @@ footer {
 		max-height: 30%;
 		clip-path: polygon(0% 0%, 100% 20%, 100% 100%, 0% 100%);
 	}
+
+	.projects-grid{
+		grid-template-columns: 1fr;
+		gap: 0.8rem;
+	}
+	.description-section{
+		flex-direction: column;
+	}
+
+	.show-all{
+		width: fit-content;
+		margin-top: 0.5rem;
+	}
+	
+
+	/* GET IN TOUCH  */
+	
+	.card-contact{
+		width: 100%;
+		background-color: transparent;
+		aspect-ratio: unset;
+		margin: 0 auto;
+		display: flex;
+		font-size: var(--fsize-1)
+	}
+	
+	.card-contact__hero{
+		display: none;
+	}
+
+	.card-contact__info{
+		width: 100%;
+		display: flex;
+		flex-direction:column;
+		align-items: center;
+		gap: 0.4em;
+		padding-top: 0.2rem;
+	}
+
+	.card-contact__info img{
+		width: 40%;
+		object-fit: cover;
+		border-radius: 50%;
+		aspect-ratio: 1;
+		height: auto;
+		border: 0.25em solid var(--dark);
+		position: relative;
+		top: auto;
+	}
+
+	.card-contact__call-to-action {
+		display: flex;
+		gap: 0.4em;
+		font-size: var(--fsize-2);
+	}
+
 }
 
