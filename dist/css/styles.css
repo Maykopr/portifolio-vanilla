@@ -9,7 +9,7 @@
 
 :root {
 	scroll-snap-type: y mandatory;
-	scroll-behavior:smooth;
+	scroll-behavior: smooth;
 
 	font-family: "Urbanist", sans-serif;
 
@@ -17,6 +17,7 @@
 
 	--width: 70%;
 	--max-width: 1280px;
+	--box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
 	/* COLORS */
 	--light: #FFF8E7;
@@ -31,14 +32,19 @@
 	--font-contrast: var(--primary);
 
 	/* FONTS */
-	--fsize--2: clamp(0.382rem, 0.5761rem + -0.2099vw, 0.5276rem);
-	--fsize--1: clamp(0.618rem, 0.7317rem + -0.1229vw, 0.7033rem);
-	--fsize-0: clamp(0.9375rem, 0.9167rem + 0.0901vw, 1rem);
-	--fsize-1: clamp(1.2497rem, 1.1269rem + 0.5309vw, 1.618rem);
-	--fsize-2: clamp(1.6658rem, 1.3485rem + 1.3724vw, 2.6179rem);
-	--fsize-3: clamp(2.7000rem, 1.5488rem + 2.9049vw, 4.2358rem);
+/* @link https://utopia.fyi/type/calculator?c=375,16,1.25,1980,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
-	--font-hero: 800 var(--fsize-3) "Urbanist", sans-serif;
+	--fsize--2: clamp(0.7rem, 0.7rem + 0.063vw, 0.8rem);
+	--fsize--1: clamp(0.8rem, 0.7678rem + 0.1373vw, 0.9377rem);
+	--fsize-0: clamp(1rem, 0.9416rem + 0.2492vw, 1.25rem);
+	--fsize-1: clamp(1.25rem, 1.1527rem + 0.415vw, 1.6663rem);
+	--fsize-2: clamp(1.5625rem, 1.4086rem + 0.6566vw, 2.2211rem);
+	--fsize-3: clamp(1.9531rem, 1.7177rem + 1.0045vw, 2.9607rem);
+	--fsize-4: clamp(2.4414rem, 2.0897rem + 1.5006vw, 3.9467rem);
+	--fsize-5: clamp(3.0518rem, 2.5356rem + 2.2023vw, 5.2609rem);
+
+
+	--font-hero: 800 var(--fsize-4) "Urbanist", sans-serif;
 	--font-nav: 400 var(--fsize-1) "Urbanist", sans-serif;
 	--font-title: 800 var(--fsize-1) "Urbanist", sans-serif;
 	--font-description: 500 var(--fsize-0) "Urbanist", sans-serif;
@@ -47,10 +53,10 @@
 
 
 	/* SIZES  */
-	--fluid-4-24: clamp(0.25rem, -0.1204rem + 1.8519vw, 1.5rem);
+	--fluid-4-24: clamp(0.25rem, -0.1204rem + 1.8519vw, 0.5rem);
 	--fluid-6-12: clamp(0.375rem, -0.0776rem + 1.0345vw, 0.75rem);
 	--fluid-52-100: clamp(3.25rem, -0.3707rem + 8.2759vw, 6.7rem);
-	--gapVert-6-32: clamp(0.375rem, -1.5893rem + 6.2857vh, 3.125rem);
+	--gapVert-6-32: clamp(0.4rem, -1.5893rem + 7vh, 4rem);
 
 }
 
@@ -61,15 +67,26 @@
 	scroll-snap-align: start; 
 }
 
+@media screen and (max-height: 598px) {
+	:root{
+		scroll-snap-type: none;
+	}
+	.wrapper, .main, .main__hero, .skills-tools, .projects,.get-in-touch{
+		min-height: fit-content;
+		height: fit-content;
+	}
+}
+
 .wrapper {
 	max-width: var(--max-width);
-	height: 80vh;
+	height: 100vh;
 	width: var(--width);
-	margin: 10vh auto;
+	margin: 0 auto;
+	padding: 8vh 0 12vh 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	z-index: 2;
+	z-index: 1;
 	gap: var(--gapVert-6-32);
 }
 
@@ -94,15 +111,17 @@
 	border-top: none;
 	border: 1px solid rgba(2, 255, 154, 0.089);
 	box-shadow: inset 0 -1px 2px 1px rgba(233, 233, 233, 0.376);
+	height: 8vh;
 	left: 50%;
+	max-height: 5rem;
 	max-width: var(--max-width);
-	max-height: 9vh;
 	position: fixed;
 	right: 50%;
 	top: 0%;
 	transform: translatex(-50%);
 	width: var(--width);
 	z-index: 10;
+	display: flex;
 }
 
 .navbar	ul {
@@ -110,7 +129,7 @@
 		align-items: center;
 		justify-content: space-evenly;
 		list-style-type: none;
-		padding: 1ch;
+		width: 100%;
 	}
 	
 .navbar	a {
@@ -129,6 +148,7 @@
 	display: flex;
 	scroll-margin-top: 0;
 	position: relative;
+	height: 100vh;
 }
 
 .main::after {
@@ -142,7 +162,7 @@
 }
 
 .main__hero {
-	min-height: 60vh;
+	min-height: 65vh;
 	display: flex;
 	flex-direction: column;
 	align-items: end;
@@ -177,11 +197,11 @@
 }
 
 .skills-tools::after {
-	clip-path: polygon(20% 60%, 100% 0, 100% 100%, 0 100%, 0 0);
+	clip-path: polygon(20% 50%, 100% 0, 100% 100%, 0 100%, 0 0);
 	content: "";
 	background-color: var(--primary);
 	width: 100%;
-	height: 10%;
+	height: 15%;
 	position: absolute;
 	bottom: 0;
 }
@@ -189,7 +209,7 @@
 .skills-tools__icon-container {	
 	padding: 1ch;
 	display: grid;
-	grid-template-columns: repeat(9, minmax(var(--fluid-52-100),1fr));
+	grid-template-columns: repeat(9, 1fr);
 	gap: var(--fluid-4-24);
 }
 
@@ -199,12 +219,11 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	gap: 1ch;
+	gap: 2ch;
 	font: var(--font-title2);
-	font-size:var(--fluid-6-12);
 	background-color: var(--secondary);
 	border-radius: 0.4em;
-	aspect-ratio: 1;
+	aspect-ratio: 4/5;
 	position: relative;
 	color: var(--light);
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -225,12 +244,11 @@
 /* PROJECTS  */
 
 .projects {
-	scroll-margin-top: 1vh;
+	scroll-margin-top: 4vh;
 	background-color: var(--primary);
 	height: 100vh;
 	position: relative;
 	display: flex;
-
 }
 
 .projects::after {
@@ -247,48 +265,56 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: clamp(2px, 10px, 20px);
-	margin: 1rem;
+	margin: 1rem 0;
 }
+
 
 .project__card {
 	background-color: var(--dark);
 	border-radius: 0.3em;
-	box-shadow: 2px 2px 1em var(--dark);
+	box-shadow: var(--box-shadow);
 	color: var(--light);
 	display : flex;
 	flex-direction: column;
-	font: var(--font-title2);
+	gap: 0.6ch;
+}
+
+.project__card--container{
+	display: flex;
+	flex-direction: column;
+	padding: 0.8ch;
+	justify-content: space-between;
+	flex-grow:1;
+	gap: 1ch;
 }
 
 .project__card img{
 	display: block;
 	width: 100%;
-	aspect-ratio: 8/5;
+	aspect-ratio: 17/9;
 	background-color: black;
 	border-radius: 0.2em 0.2em 0 0;
 }
 
 .project__card h3{
+	font: var(--font-title2);
 	align-self: start;
-	padding: 1ch;
-	
 }
 
 .project__card p{
-	padding: 1ch;
+	font: var(--font-description2);
 	flex-grow: 1;
 }
 
 .project__card .btn-container{
-	padding: 1ch;
 	display: flex;
 	justify-content: end;
-	gap: 0.4em
+	gap: 0.4em;
 }
 
 .project__card a{
 	background-color: var(--contrast);
-	padding: 1ch;
+	padding: 0.5ch;
 	border: none;
 	border-radius: 0.2em;
 	font: var(--font-title2);
@@ -300,10 +326,16 @@
 	filter: brightness(1.3);
 }
 
-.projects .description-section{
+.projects .title-container{
 	display: flex;
 	justify-content: space-between;
+	align-items: end;
 }
+.title-container__separator{
+	display: flex;
+	flex-direction: column;
+}
+
 .show-all{
 	background-color: var(--dark);
 	padding: 1.5ch 2ch;
@@ -324,7 +356,7 @@
 
 .get-in-touch {
 	scroll-margin-top: 1vh;
-	height: 85vh;
+	height: 90vh;
 	display: flex;
 	background-color: var(--light);
 	position: relative;
@@ -344,7 +376,7 @@
 	max-width: 926px;
 	width: 60%;
 	background-color: var(--secondary);
-	aspect-ratio: 5/3;
+	aspect-ratio: 16/9;
 	margin: 1.5em auto;
 	display: flex;
 }
@@ -437,7 +469,7 @@
 footer {
 	background-color: var(--dark);
 	color: var(--neutral);
-	height: 15vh;
+	height: 10vh;
 	text-align: end;
 	padding: 1em 5%;
 }
@@ -479,12 +511,77 @@ footer {
 
 /* RESPONSIVENESS */
 /* tablet */
-@media screen and (max-width: 720px){
+@media screen and (max-width: 1030px) and (min-width: 576px){
+	.main {
+		background-image: url(../img/home1.png);
+		background-size: cover;
+		background-position: -20px -100px;
+		background-repeat: no-repeat;
+	}
+
+	.navbar{
+		width: 80%;
+	}
+	.wrapper {
+		width: 80%;
+	}
+
+/* SKILLS  */
+	
+
+	.skills-tools::after{
+	height: 20%;
+	}
+
+	.skills-tools__icon-container{
+		grid-template-columns: repeat(6,1fr);
+	}
+	.skills-tools__icon-container span {
+	aspect-ratio: 3/4;
+	}
+
+
+
+	/* PROJECTS 	  */
+	.projects-grid {
+		display: flex;
+		flex-direction: column;
+		margin: 1rem;
+	}
+	.project__card{
+		flex-direction: row;
+		
+	}
+
+	.project__card h3{
+		font: var(--font-description);
+	}
+	.project__card p{
+		font: var(--font-description);
+		
+	}
+	.project__card img{
+		width: 40%;
+		aspect-ratio: 6/4;
+		background-color: black;
+		border-radius: 0.2em 0 0 0.2em;
+	}
+
+
+	/* GET IN TOUCH  */
+	.card-contact{
+		max-width: 926px;
+		width: 80%;
+		background-color: var(--secondary);
+		aspect-ratio: 16/11;
+		margin: 1.5em auto;
+		display: flex;
+	}
 }
 
 
 /* smartphone */
-@media screen and (max-width: 420px){
+@media screen and (max-width: 576px){
 	:root{
 		scroll-snap-type: none;
 		scroll-behavior: smooth;
@@ -501,7 +598,6 @@ footer {
 	.wrapper {
 		max-width: var(--max-width);
 		width: 85%;
-		margin: 8vh auto;
 	}
 
 	.wrapper, .skills-tools, .projects{
@@ -550,7 +646,7 @@ footer {
 		grid-template-columns: 1fr;
 		gap: 0.8rem;
 	}
-	.description-section{
+	.projects .title-container{
 		flex-direction: column;
 	}
 
