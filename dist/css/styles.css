@@ -335,6 +335,8 @@
 	font: var(--font-title2);
 	color: var(--light);
 	text-decoration: none;
+	width: min-content;
+	text-wrap: nowrap;
 }
 .show-all:hover {
 	cursor: pointer;
